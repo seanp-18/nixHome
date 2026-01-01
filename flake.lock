@@ -1,0 +1,214 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "lwad-nixos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766292113,
+        "narHash": "sha256-sWTtmkQujRpjWYCnZc8LWdDiCzrRlSBPrGovkZpLkBI=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "fdec8815a86db36f42fc9c8cb2931cd8485f5aed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "lwad-nixos": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "mskb": "mskb",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "project-manager": "project-manager",
+        "qgs": "qgs",
+        "tagdex": "tagdex",
+        "u2d-mal": "u2d-mal",
+        "unstable": "unstable"
+      },
+      "locked": {
+        "lastModified": 1766477134,
+        "narHash": "sha256-JyZE3C7ASfTJeeO3SZUmn2zz5AWzwESYN/zVvDJ6hpI=",
+        "ref": "main",
+        "rev": "8c5859e87f826bd0dc1ac2d8b7ad77a41c7ad022",
+        "revCount": 2273,
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/nixos"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/nixos"
+      }
+    },
+    "mskb": {
+      "inputs": {
+        "nixpkgs": [
+          "lwad-nixos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1754079679,
+        "narHash": "sha256-ODj1yE37xrrN9Bht7kWByLfzKllGCaMpXKKk3njvdfY=",
+        "ref": "refs/heads/main",
+        "rev": "af0c456429fdee074f07141a71ea0a4a05fd9489",
+        "revCount": 7,
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/mskb.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/mskb.git"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1765838191,
+        "narHash": "sha256-m5KWt1nOm76ILk/JSCxBM4MfK3rYY7Wq9/TZIIeGnT8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c6f52ebd45e5925c188d1a20119978aa4ffd5ef6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "project-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "lwad-nixos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765797830,
+        "narHash": "sha256-NfF9If6JURDw5uzbh8NDESq78czFAJtG95OlzXFG7R4=",
+        "ref": "refs/heads/main",
+        "rev": "c4c070cf0622abcdef482fe530ed72af8eb430d5",
+        "revCount": 65,
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/project-manager.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/project-manager.git"
+      }
+    },
+    "qgs": {
+      "inputs": {
+        "nixpkgs": [
+          "lwad-nixos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757179296,
+        "narHash": "sha256-kEEGpBYk6bdjxBk9wHFXbsuL0wv6JE+nsyxnoyWcbeY=",
+        "ref": "refs/heads/main",
+        "rev": "1c86ff47bd71e8083e2960cf91c1d55b1009d045",
+        "revCount": 8,
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/qgs.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/qgs.git"
+      }
+    },
+    "root": {
+      "inputs": {
+        "lwad-nixos": "lwad-nixos",
+        "nixpkgs": "nixpkgs",
+        "unstable": "unstable_2"
+      }
+    },
+    "tagdex": {
+      "inputs": {
+        "nixpkgs": [
+          "lwad-nixos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757709973,
+        "narHash": "sha256-wTu0O1ykwkB7yTk+G9CeLEqRN/gXss0WV+xC5FSqslI=",
+        "ref": "refs/heads/main",
+        "rev": "40d35e19166419dd786f6c074f5358299e62c945",
+        "revCount": 40,
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/tagdex.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/tagdex.git"
+      }
+    },
+    "u2d-mal": {
+      "inputs": {
+        "nixpkgs": [
+          "lwad-nixos",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724958160,
+        "narHash": "sha256-gEXt3uMwWNStcYAaORNpQNuvGkjLAOURphEiOC1aNPk=",
+        "ref": "refs/heads/main",
+        "rev": "630734aac4dcc540893408929fe59dc4ae019cca",
+        "revCount": 4,
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/u2d-mal.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lwad.xyz/lwad/u2d-mal.git"
+      }
+    },
+    "unstable": {
+      "locked": {
+        "lastModified": 1766476350,
+        "narHash": "sha256-JbSaOKi9jBGu1KG+BANYiocKsc+EI8Qb4MUKgtXnaTE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "48c44c67646d5a8c7c168e1ded8adf6fd8f3831b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "unstable_2": {
+      "locked": {
+        "lastModified": 1766491707,
+        "narHash": "sha256-8ILBMTB3tU4etacU9JcmUtO+gDoWE4TmhlK+hSyy/zk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d222d01cd2ea050af63ae3ac1e151e9b0f7f6aac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
