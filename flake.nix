@@ -8,10 +8,17 @@
     };
   };
   outputs = inputs: {
-    nixosConfigurations.hestia = inputs.nixpkgs.lib.nixosSystem {
-      modules = [ ./configuration.nix ./hardware-configuration.nix ];
-      specialArgs = { inherit inputs; };
-      system = "x86_64-linux";
+    nixosConfigurations = {
+      hestia = inputs.nixpkgs.lib.nixosSystem {
+        modules = [ ./hestia ./common.nix ];
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+      };
+      freyja = inputs.nixpkgs.lib.nixosSystem {
+        modules = [ ./freyja ./common.nix ];
+        specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
+      };
     };
   };
 }

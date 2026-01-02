@@ -37,33 +37,29 @@
     enable = true;
     virtualHosts = {
       # radarr
-      "http://radarr.hestia" = {
+      "http://radarr.${config.networking.hostName}" = {
         extraConfig = ''
           reverse_proxy http://127.0.0.1:7878
         '';
-        listenAddresses = [ "100.79.17.128" "[fd7a:115c:a1e0::7401:1180]" ];
       };
       # jellyfin
-      "http://jellyfin.hestia" = {
+      "http://jellyfin.${config.networking.hostName}" = {
         extraConfig = ''
           reverse_proxy http://127.0.0.1:8096 
         '';
-        listenAddresses = [ "100.79.17.128" "[fd7a:115c:a1e0::7401:1180]" ];
       };
 
       # sonarr
-      "http://sonarr.hestia" = {
+      "http://sonarr.${config.networking.hostName}" = {
         extraConfig = ''
           reverse_proxy http://127.0.0.1:8989
         '';
-        listenAddresses = [ "100.79.17.128" "[fd7a:115c:a1e0::7401:1180]" ];
       };
       # prowlarr
-      "http://prowlarr.hestia" = {
+      "http://prowlarr.${config.networking.hostName}" = {
         extraConfig = ''
           reverse_proxy http://127.0.0.1:9696
         '';
-        listenAddresses = [ "100.79.17.128" "[fd7a:115c:a1e0::7401:1180]" ];
       };
     };
   };
@@ -76,6 +72,10 @@
         "/radarr.hestia/100.79.17.128"
         "/prowlarr.hestia/100.79.17.128"
         "/jellyfin.hestia/100.79.17.128"
+        "/sonarr.freyja/100.120.98.80"
+        "/radarr.freyja/100.120.98.80"
+        "/prowlarr.freyja/100.120.98.80"
+        "/jellyfin.freyja/100.120.98.80"
       ];
       server = [ "1.1.1.1" "8.8.8.8" ];
       bind-dynamic = true;
