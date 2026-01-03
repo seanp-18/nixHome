@@ -11,7 +11,13 @@
 
   networking.hostName = "freyja"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  fileSystems = {
+    "/media" = {
+      device = "/dev/disk/by-uuid/1574f83e-3441-412d-83ba-2a2492e33fe0";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "noatime" "nodiratime" "space_cache=v2" ];
+    };
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -30,7 +36,7 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
+  networking.firewall.interfaces.wlp3s0.allowedTCPPorts = [ 8096 ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

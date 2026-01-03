@@ -61,6 +61,12 @@
           reverse_proxy http://127.0.0.1:9696
         '';
       };
+      #transmission 
+      "http://transmission.${config.networking.hostName}" = {
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:9091
+        '';
+      };
     };
   };
   services.dnsmasq = {
@@ -72,10 +78,12 @@
         "/radarr.hestia/100.79.17.128"
         "/prowlarr.hestia/100.79.17.128"
         "/jellyfin.hestia/100.79.17.128"
+        "/transmission.hestia/100.79.17.128"
         "/sonarr.freyja/100.120.98.80"
         "/radarr.freyja/100.120.98.80"
         "/prowlarr.freyja/100.120.98.80"
         "/jellyfin.freyja/100.120.98.80"
+        "/transmission.freyja/100.120.98.80"
       ];
       server = [ "1.1.1.1" "8.8.8.8" ];
       bind-dynamic = true;
