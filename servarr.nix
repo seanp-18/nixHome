@@ -104,18 +104,5 @@
     };
     wantedBy = [ "graphical-session.target" ];
   };
-  ## proton vpn brokie
-  # networking.wg-quick.interfaces."wg0" = {
-  #   autostart = true;
-  #   dns = [ "10.2.0.1" ];
-  #   privateKeyFile = "/home/sean/protonFilekey.txt";
-  #   address = [ "10.2.0.2/32" ];
-
-  #   peers = [{
-  #     publicKey = "KJ7R+L65d6HOlSCMvQKFEbEzWga5MtlR24Plh7afIGI=";
-  #     allowedIPs = [ "0.0.0.0/0" "::/0" ];
-  #     endpoint = "185.183.33.11:51820";
-  #   }];
-  # };
 }
 
