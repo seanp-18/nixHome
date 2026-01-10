@@ -5,9 +5,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    ./servarr.nix
-  ];
+  imports = [ ./servarr.nix ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -70,6 +68,10 @@
       [
         #  thunderbird
       ];
+  };
+  users.users.smbuser = {
+    isNormalUser = true;
+    description = "filetransfers";
   };
 
   # Install firefox.

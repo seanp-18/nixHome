@@ -9,6 +9,22 @@
     enable = true;
     openFirewall = true;
   };
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    settings.global = {
+      "workgroup" = "WORKGROUP";
+      "server string" = "smbnix";
+      "security" = "user";
+    };
+    settings.Public = {
+      browseable = "yes";
+      comment = "Public samba share.";
+      "guest ok" = "yes";
+      path = "/media/backup/";
+      "read only" = "no";
+    };
+  };
   services.prowlarr.settings.server.bindaddress = "127.0.0.1";
   services.jellyfin.enable = true;
   services.transmission.enable = true;
@@ -23,7 +39,12 @@
     "d /media/anime - sonarr sonarr"
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
+    "d /media/backup - smbuser users"
   ];
+  # Samba requires these ports for file supports and network discovery
+  networking.firewall.allowedTCPPorts = [ 445 139 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
+  # These ports are to enable applications from the home server to be available to devices on the tailnet
   networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 80 53 ];
   networking.firewall.interfaces.tailscale0.allowedUDPPorts = [ 53 67 ];
   systemd.services.caddy = lib.mkIf config.services.caddy.enable {
@@ -91,7 +112,7 @@
 
     };
   };
-  environment.systemPackages = [ pkgs.wgnord ];
+  environment.systemPackages = with pkgs; [ samba ];
   systemd.user.services.caffeine = {
     description = "caffeine";
     script = "${lib.getExe' pkgs.caffeine-ng "caffeine"}";
