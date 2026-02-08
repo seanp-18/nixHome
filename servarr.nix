@@ -25,6 +25,14 @@
       "read only" = "no";
     };
   };
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+
+    user = "root";
+
+    settings = { gui.enable = false; };
+  };
   services.prowlarr.settings.server.bindaddress = "127.0.0.1";
   services.jellyfin.enable = true;
   services.transmission.enable = true;
