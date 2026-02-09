@@ -34,7 +34,7 @@
       devices = {
         hestia = {
           id =
-          "FWOLZDG-JMOSSDR-GWM4Y4W-LXV4PMD-ICPIUMI-4KW5N46-4VBD77O-HHUMPQO";
+            "FWOLZDG-JMOSSDR-GWM4Y4W-LXV4PMD-ICPIUMI-4KW5N46-4VBD77O-HHUMPQO";
           addresses = [ "tcp://100.79.17.128:22000" ];
         };
         freyja = {
@@ -45,7 +45,7 @@
       };
       folders = {
         backup = {
-          path = "/backup";
+          path = "/media/backup";
           devices = [ "hestia" "freyja" ];
         };
       };
@@ -66,6 +66,9 @@
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
     "d /media/backup - smbuser users"
+    "d /media/backup - syncthing syncthing"
+    "f /media/backup/.stfolder syncthing syncthing"
+
   ];
   # Samba requires these ports for file supports and network discovery
   networking.firewall.allowedTCPPorts = [ 445 139 ];
