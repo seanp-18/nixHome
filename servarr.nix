@@ -28,10 +28,23 @@
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
-
     user = "root";
 
-    settings = { gui.enable = false; };
+    settings = {
+      gui.enable = false;
+      devices = {
+        hestia.id =
+          "DKZOBVI-UVDM5Y5-7DTKSFC-EWDTRHV-RTWPSZT-NGKGTYD-MJV50XL-JUV2TQI";
+        freyja.id =
+          "YTSBAA3-QWCLHNR-KMCPZ4N-4JXMFAY-77W6ISR-J25BWKS-CE67AUZ-Y77FSA6";
+      };
+      folders = {
+        backup = {
+          path = "/backup";
+          devices = [ "hestia" "freyja" ];
+        };
+      };
+    };
   };
   services.prowlarr.settings.server.bindaddress = "127.0.0.1";
   services.jellyfin.enable = true;
