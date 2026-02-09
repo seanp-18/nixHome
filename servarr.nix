@@ -65,8 +65,7 @@
     "d /media/anime - sonarr sonarr"
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
-    "d /media/backup - smbuser users"
-    "Z /media/backup 0755 syncthing syncthing -"
+    "Z /media/backup 2775 root backup -"
     "f /media/backup/.stfolder - syncthing syncthing"
 
   ];

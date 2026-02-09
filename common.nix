@@ -72,7 +72,15 @@
   users.users.smbuser = {
     isNormalUser = true;
     description = "filetransfers";
+    extraGroups = [ "backup" ];
   };
+  users.users.syncthing = {
+    isSystemUser = true;
+    group = "syncthing";
+    extraGroups = [ "backup" ];
+  };
+  #group for backups
+  users.groups.backup = {};
 
   # Install firefox.
   programs.firefox.enable = true;
