@@ -34,12 +34,12 @@
       devices = {
         hestia = {
           id =
-            "DKZOBVI-UVDM5Y5-7DTKSFC-EWDTRHV-RTWPSZT-NGKGTYD-MJV50XL-JUV2TQI";
+          "FWOLZDG-JMOSSDR-GWM4Y4W-LXV4PMD-ICPIUMI-4KW5N46-4VBD77O-HHUMPQO";
           addresses = [ "tcp://100.79.17.128:22000" ];
         };
         freyja = {
           id =
-            "YTSBAA3-QWCLHNR-KMCPZ4N-4JXMFAY-77W6ISR-J25BWKS-CE67AUZ-Y77FSA6";
+            "WIEE74Z-OGTJWWI-MLXJJGP-4HMWV53-XAPAAIN-33J67UI-SUQFR3C-U27EHAN";
           addresses = [ "tcp://100.120.98.80:22000" ];
         };
       };
