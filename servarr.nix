@@ -66,8 +66,8 @@
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
     "d /media/backup - smbuser users"
-    "d /media/backup - syncthing syncthing"
-    "f /media/backup/.stfolder syncthing syncthing"
+    "Z /media/backup 0755 syncthing syncthing -"
+    "f /media/backup/.stfolder - syncthing syncthing"
 
   ];
   # Samba requires these ports for file supports and network discovery
