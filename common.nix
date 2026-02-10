@@ -79,8 +79,15 @@
     group = "syncthing";
     extraGroups = [ "backup" ];
   };
+  users.users.navidrome = {
+    isSystemUser = true;
+    group = "navidrome";
+    extraGroups = [ "music" ];
+  };
   #group for backups
-  users.groups.backup = {};
+  users.groups.backup = { };
+  #group for musics
+  users.groups.music = { };
 
   # Install firefox.
   programs.firefox.enable = true;

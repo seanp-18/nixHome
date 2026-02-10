@@ -1,6 +1,14 @@
 { pkgs, lib, config, ... }:
 
 {
+  services.navidrome = {
+    enable = true;
+    settings = {
+      Address = "127.0.0.1";
+      Port = 4533;
+      MusicFolder = "/media/music";
+    };
+  };
   services.radarr.enable = true;
   services.radarr.settings.server.bindaddress = "127.0.0.1";
   services.sonarr.enable = true;
@@ -24,6 +32,14 @@
       path = "/media/backup/";
       "read only" = "no";
     };
+    settings.Music = {
+      browseable = "yes";
+      comment = "Public samba share.";
+      "guest ok" = "yes";
+      path = "/media/music/";
+      "read only" = "no";
+    };
+
   };
   services.syncthing = {
     enable = true;
@@ -63,6 +79,7 @@
     "d /media/movies - radarr radarr"
     "d /media/tv - sonarr sonarr"
     "d /media/anime - sonarr sonarr"
+    "d /media/music - root music"
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
     "Z /media/backup 2775 root backup -"
@@ -115,7 +132,14 @@
         extraConfig = ''
           reverse_proxy http://127.0.0.1:9091
         '';
+        #navidrome
       };
+      "http://navidrome.${config.networking.hostName}" = {
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:4533
+        '';
+      };
+
     };
   };
   services.dnsmasq = {
@@ -128,11 +152,13 @@
         "/prowlarr.hestia/100.79.17.128"
         "/jellyfin.hestia/100.79.17.128"
         "/transmission.hestia/100.79.17.128"
+        "/navidrome.hestia/100.79.17.128"
         "/sonarr.freyja/100.120.98.80"
         "/radarr.freyja/100.120.98.80"
         "/prowlarr.freyja/100.120.98.80"
         "/jellyfin.freyja/100.120.98.80"
         "/transmission.freyja/100.120.98.80"
+        "/navidrome.freyja/100.120.98.80"
       ];
       server = [ "1.1.1.1" "8.8.8.8" ];
       bind-dynamic = true;
