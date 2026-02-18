@@ -36,7 +36,7 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  networking.firewall.interfaces.wlp3s0.allowedTCPPorts = [ 8096 ];
+  networking.firewall.interfaces.wlp3s0.allowedTCPPorts = [ 8096 4533 ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
