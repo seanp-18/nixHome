@@ -82,7 +82,7 @@
     "d /media/music - root music"
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
-    "d /media/backup 2775 smbuser backup -"
+    "d /media/backup 0775 smbuser backup -"
     "Z /media/backup - smbuser backup -"
     "f /media/backup/.stfolder - syncthing syncthing"
 
