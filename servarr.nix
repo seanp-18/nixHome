@@ -43,7 +43,7 @@
   };
   services.syncthing = {
     enable = true;
-    user = "root";
+    user = "syncthing";
 
     settings = {
       gui.enable = false;
