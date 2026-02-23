@@ -63,6 +63,7 @@
         backup = {
           path = "/media/backup";
           devices = [ "hestia" "freyja" ];
+          ignorePerms = true;
         };
       };
     };
