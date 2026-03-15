@@ -134,7 +134,7 @@
         '';
       };
       # lidarr
-      "http://lidarrarr.${config.networking.hostName}" = {
+      "http://lidarr.${config.networking.hostName}" = {
         extraConfig = ''
           reverse_proxy http://127.0.0.1:8686
         '';
