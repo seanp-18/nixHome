@@ -170,7 +170,7 @@
         "/sonarr.freyja/100.120.98.80"
         "/radarr.freyja/100.120.98.80"
         "/prowlarr.freyja/100.120.98.80"
-        "/lidarr.hestia/100.120.98.80"
+        "/lidarr.freyja/100.120.98.80"
         "/jellyfin.freyja/100.120.98.80"
         "/transmission.freyja/100.120.98.80"
         "/navidrome.freyja/100.120.98.80"
