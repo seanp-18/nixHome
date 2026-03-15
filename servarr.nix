@@ -13,6 +13,8 @@
   services.radarr.settings.server.bindaddress = "127.0.0.1";
   services.sonarr.enable = true;
   services.sonarr.settings.server.bindaddress = "127.0.0.1";
+  services.lidarr.enable = true;
+  services.lidarr.settings.server.bindaddress = "127.0.0.1";
   services.prowlarr = {
     enable = true;
     openFirewall = true;
@@ -74,15 +76,17 @@
   services.transmission.settings.umask = "002";
   users.users.sonarr.extraGroups = [ "transmission" ];
   users.users.radarr.extraGroups = [ "transmission" ];
-  users.users.jellyfin.extraGroups = [ "sonarr" "radarr" ];
+  users.users.lidarr.extraGroups = [ "transmission" ];
+  users.users.jellyfin.extraGroups = [ "sonarr" "radarr" "lidarr" ];
   systemd.tmpfiles.rules = [
     "d /var/lib/transmission/Downloads - transmission transmission"
     "d /media/movies - radarr radarr"
     "d /media/tv - sonarr sonarr"
     "d /media/anime - sonarr sonarr"
-    "d /media/music - root music"
+    "d /media/music - lidarr music"
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
+    "d /var/lib/transmission/Downloads/lidarr-music - transmission transmission"
     "d /media/backup 0775 smbuser backup -"
     "Z /media/backup - smbuser backup -"
     "f /media/backup/.stfolder - syncthing syncthing"
@@ -129,7 +133,14 @@
           reverse_proxy http://127.0.0.1:9696
         '';
       };
-      #transmission 
+      # lidarr
+      "http://lidarrarr.${config.networking.hostName}" = {
+        extraConfig = ''
+          reverse_proxy http://127.0.0.1:8686
+        '';
+      };
+
+      # transmission 
       "http://transmission.${config.networking.hostName}" = {
         extraConfig = ''
           reverse_proxy http://127.0.0.1:9091
@@ -152,12 +163,14 @@
         "/sonarr.hestia/100.79.17.128"
         "/radarr.hestia/100.79.17.128"
         "/prowlarr.hestia/100.79.17.128"
+        "/lidarr.hestia/100.79.17.128"
         "/jellyfin.hestia/100.79.17.128"
         "/transmission.hestia/100.79.17.128"
         "/navidrome.hestia/100.79.17.128"
         "/sonarr.freyja/100.120.98.80"
         "/radarr.freyja/100.120.98.80"
         "/prowlarr.freyja/100.120.98.80"
+        "/lidarr.hestia/100.120.98.80"
         "/jellyfin.freyja/100.120.98.80"
         "/transmission.freyja/100.120.98.80"
         "/navidrome.freyja/100.120.98.80"

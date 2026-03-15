@@ -84,6 +84,11 @@
     group = "navidrome";
     extraGroups = [ "music" ];
   };
+  users.users.lidarr = {
+    isSystemUser = true;
+    group = "lidarr";
+    extraGroups = [ "music" ];
+  };
   #group for backups
   users.groups.backup = { };
   #group for musics
