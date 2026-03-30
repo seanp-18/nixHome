@@ -29,8 +29,12 @@
     LC_PAPER = "th_TH.UTF-8";
     LC_TELEPHONE = "th_TH.UTF-8";
     LC_TIME = "th_TH.UTF-8";
-  };
-  networking.firewall.interfaces.enp0s31f6.allowedTCPPorts = [ 80 8096 ];
+  }; 
+  # Palworld game traffic , Steam query
+  networking.firewall.interfaces.enp0s31f6.allowedUDPPorts = [ 8211 27015 ];
+
+  # HTTP , jellyfin , Palworld RCON/REST API
+  networking.firewall.interfaces.enp0s31f6.allowedTCPPorts = [ 80 8096 8212 ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

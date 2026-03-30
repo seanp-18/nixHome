@@ -9,6 +9,7 @@
       MusicFolder = "/media/music";
     };
   };
+  services.rustdesk-server.enable = true;
   services.radarr.enable = true;
   services.radarr.settings.server.bindaddress = "127.0.0.1";
   services.sonarr.enable = true;
