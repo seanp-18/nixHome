@@ -5,7 +5,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [ ./servarr.nix ];
+  imports = [ ./servarr.nix ./palworld_server.nix ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
