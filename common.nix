@@ -94,6 +94,7 @@
     inputs.lwad-nixos.packages.${pkgs.stdenv.hostPlatform.system}.neovim
     nixfmt-classic
     wgnord
+    openssh
   ];
 
   # Base firewall ports
