@@ -20,7 +20,7 @@
       TZ = "UTC";
       PAL_EGG_DEFAULT_HATCHING_TIME = "0";
       DROP_ITEM_MAX_NUM = "1000";
-      PAL_SPAWN_NUM_RATE = "0.8";
+      PAL_SPAWN_NUM_RATE = "2.0";
     };
 
     environmentFiles = [ /palworld-secrets ];
