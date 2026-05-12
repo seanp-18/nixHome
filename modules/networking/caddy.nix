@@ -22,9 +22,10 @@
       "http://transmission.${config.networking.hostName}" = {
         extraConfig = "reverse_proxy http://127.0.0.1:9091";
       };
-      "http://navidrome.${config.networking.hostName}" = {
-        extraConfig = "reverse_proxy http://127.0.0.1:4533";
+      "http://adguardhome.${config.networking.hostName}" = {
+        extraConfig = "reverse_proxy http://127.0.0.1:3000";
       };
+
     };
   };
 
@@ -37,6 +38,6 @@
   };
 
   # Tailscale firewall rules for Caddy
-  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 80 53 ];
-  networking.firewall.interfaces.tailscale0.allowedUDPPorts = [ 53 67 ];
+  networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 80 53 5353 ];
+  networking.firewall.interfaces.tailscale0.allowedUDPPorts = [ 53 67 5353 ];
 }
