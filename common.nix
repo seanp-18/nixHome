@@ -71,11 +71,6 @@
     extraGroups = [ "backup" ];
   };
 
-  users.users.lidarr = {
-    isSystemUser = true;
-    group = "lidarr";
-    extraGroups = [ "music" ];
-  };
 
   # Groups
   users.groups.backup = { };

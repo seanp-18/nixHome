@@ -16,9 +16,6 @@
       "http://prowlarr.${config.networking.hostName}" = {
         extraConfig = "reverse_proxy http://127.0.0.1:9696";
       };
-      "http://lidarr.${config.networking.hostName}" = {
-        extraConfig = "reverse_proxy http://127.0.0.1:8686";
-      };
       "http://transmission.${config.networking.hostName}" = {
         extraConfig = "reverse_proxy http://127.0.0.1:9091";
       };

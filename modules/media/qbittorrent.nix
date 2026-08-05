@@ -3,16 +3,15 @@
 {
   services.qbittorrent = {
   enable = true;
-  webUI = {
-    port = 8080;         # Default web UI port
-    openFirewall = true; # Opens port in firewall
-    };
+  webuiPort = 8080;
+  group = "servarr";
+  openFirewall = true;
+
   };
 
   systemd.tmpfiles.rules = [
-    "d /var/lib/qbittorrent/Downloads - qbittorrent qbittorrent"
-    "d /var/lib/qbittorrent/Downloads/radarr-movies - qbittorrent qbittorrent"
-    "d /var/lib/qbittorrent/Downloads/sonarr-shows - qbittorrent qbittorrent"
-    "d /var/lib/qbittorrent/Downloads/lidarr-music - qbittorrent qbittorrent"
+    "d /var/lib/qbittorrent/Downloads - qbittorrent servarr"
+    "d /var/lib/qbittorrent/Downloads/radarr-movies - qbittorrent servarr"
+    "d /var/lib/qbittorrent/Downloads/sonarr-shows - qbittorrent servarr"
   ];
 }

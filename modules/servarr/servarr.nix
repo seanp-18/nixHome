@@ -1,22 +1,21 @@
 { pkgs, lib, config, ... }:
 
 {
+  users.groups.servarr = { };
 
   # Servarr stack
   services.radarr = {
     enable = true;
     settings.server.bindaddress = "127.0.0.1";
+    group = "servarr";
   };
 
   services.sonarr = {
     enable = true;
     settings.server.bindaddress = "127.0.0.1";
+    group = "servarr";
   };
 
-  services.lidarr = {
-    enable = true;
-    settings.server.bindaddress = "127.0.0.1";
-  };
 
   services.prowlarr = {
     enable = true;
@@ -25,16 +24,16 @@
   };
 
   # User group assignments
-  users.users.sonarr.extraGroups = [ "transmission" "qbittorent" ];
-  users.users.radarr.extraGroups = [ "transmission" "qbittorent" ];
-  users.users.jellyfin.extraGroups = [ "sonarr" "radarr" "lidarr" ];
+  users.users.sonarr.extraGroups = [ "servarr" ];
+  users.users.radarr.extraGroups = [ "servarr" ];
+  users.users.jellyfin.extraGroups = [ "servarr" ];
+
 
   # Media directory permissions
   systemd.tmpfiles.rules = [
-    "d /media/movies - radarr radarr"
-    "d /media/tv - sonarr sonarr"
-    "d /media/anime - sonarr sonarr"
-    "d /media/music - lidarr music"
+    "d /media/movies - radarr servarr"
+    "d /media/tv - sonarr servarr"
+    "d /media/anime - sonarr servarr"
   ];
 
   systemd.user.services.caffeine = {

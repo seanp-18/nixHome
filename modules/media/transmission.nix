@@ -10,6 +10,5 @@
     "d /var/lib/transmission/Downloads - transmission transmission"
     "d /var/lib/transmission/Downloads/radarr-movies - transmission transmission"
     "d /var/lib/transmission/Downloads/sonarr-shows - transmission transmission"
-    "d /var/lib/transmission/Downloads/lidarr-music - transmission transmission"
   ];
 }
