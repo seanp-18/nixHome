@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./jellyfin.nix ./transmission.nix ];
+imports = [ ./jellyfin.nix ./transmission.nix ./qbittorrent.nix ];
 }
