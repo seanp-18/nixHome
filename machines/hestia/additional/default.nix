@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./palworld_server.nix
+    ./valheim_server.nix
   ];
 }
